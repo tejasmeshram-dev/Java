@@ -24,15 +24,10 @@ age = 20;
 Or update it:
 ```
 int age = 20;
-
 age = 25;
-
 System.out.println(age);
 ```
-Output:
-
-`25`
-
+Output: `25` 
 The original value is replaced.
 
 Declaration vs. initialization
@@ -45,25 +40,25 @@ int y = 20;  // Declaration and initialization
 An uninitialized local variable cannot be read.
 ```
 int x;
-
 System.out.println(x); // Compilation error
 ```
-Java does not automatically initialize local variables for you. 
-However, fields in classes receive default values. We will explore this distinction later when we discuss classes and objects.
+Java does not automatically initialize local variables for you. However, fields in classes receive default values. 
+
 
 2. Primitive Data Types
 
 Java has eight primitive data types.
 
-Type	Typical size	Example	Common use
-byte	8 bits	byte x = 100;	Small integer ranges
-short	16 bits	short x = 1000;	Smaller integer ranges
-int	32 bits	int x = 100;	Most ordinary integers
-long	64 bits	long x = 10000000000L;	Large integers
-float	32 bits	float x = 3.14f;	Lower-precision decimals
-double	64 bits	double x = 3.14;	Most ordinary decimal calculations
-char	16 bits	char x = 'A';	A UTF-16 code unit
-boolean	JVM-dependent representation	boolean x = true;	Logical true/false values
+|Type	|Typical size	|Example	|Common use    |
+|----    |----    |----    |----    |
+|byte	|8 bits	byte |x = 100;	|Small integer ranges    |
+|short	|16 bits	|short x = 1000;	|Smaller integer ranges    |
+|int	|32 bits	|int x = 100;	|Most ordinary integers    |
+|long	|64 bits	|long x = 10000000000L;	|Large integers    |
+|float	|32 bits	|float x = 3.14f;	|Lower-precision decimals    |
+|double	|64 bits	|double x = 3.14;	|Most ordinary decimal calculations    |
+|char	|16 bits	|char x = 'A';	|A UTF-16 code unit    |
+|boolean	|JVM-dependent representation	|boolean x = true;	|Logical true/false values    |
 
     
     **A. int**
