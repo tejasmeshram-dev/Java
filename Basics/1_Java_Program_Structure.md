@@ -1,7 +1,6 @@
 ## Java Program Structure
 
 What a Java program looks like. Consider program:
-
 ```
 public class Main {
 
@@ -11,16 +10,15 @@ public class Main {
     }
 }
 ```
+Output: `10`
 
-Output:
-
-`10`
-
-### Breakdown.
+<br>
 
 1. `public class Main {`
- 
+
 Java organizes code into classes. Think of a class as a container for related code. When a class is declared public, its name generally needs to match the   filename. This declares a class named Main. Therefore, this code belongs in Main.java.
+
+<br>
 
 2. `public static void main(String[] args)`
 
@@ -30,6 +28,8 @@ This is the standard entry point used to launch a typical Java application.
 - void	: The method does not return a value
 - main	: The method name recognized as the entry point
 - String[] args :	An array of strings containing command-line arguments
+
+<br>
 
 3. **Statements and semicolons** 
 
@@ -45,18 +45,22 @@ int x = 10   // Missing semicolon
 ```
 The second example produces a compilation error.
 
+<br>
+
 4. **Comments**
 
 Comments help explain your code and are ignored by the compiler.
-- `// Single-line comment`
-
 - ```
-  /*
-     Multi-line
-     comment
-  */
+    // Single-line comment
   ```
+- ```
+    /*
+    Multi-line
+    comment
+    */
+    ```
 
+<br>
 
 5. **Printing output**
 ```
