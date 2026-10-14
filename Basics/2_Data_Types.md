@@ -1,5 +1,6 @@
 ## Variables and Data Types
 
+<br>
 
 ### 1. Variable
 
@@ -44,6 +45,7 @@ System.out.println(x); // Compilation error
 ```
 Java does not automatically initialize local variables for you. However, fields in classes receive default values.
 
+<br>
 
 ### 2. Primitive Data Types
 
@@ -60,6 +62,7 @@ Java has eight primitive data types.
 |char	|16 bits	|char x = 'A';	|A UTF-16 code unit    |
 |boolean	|JVM-dependent representation	|boolean x = true;	|Logical true/false values    |
 
+<br>
     
 **A. int**
 
@@ -79,6 +82,8 @@ int index = 0;
 int count = 10;
 int sum = 0;
 ```
+
+<br>
 
 **B. long**
 
@@ -109,7 +114,9 @@ Output:
     
 **Rule**: If the problem involves large sums, products, prefix sums, or potentially large counts, examine the constraints before choosing your type.
 
-C. double
+<br>
+
+**C. double**
 
 Used for ordinary floating-point calculations. 
 Integer arithmetic is common, but floating-point calculations appear in geometry, probability, and numerical problems.
@@ -126,7 +133,9 @@ You may see:  `0.30000000000000004`
 
 This is normal floating-point behavior.
 
-D. boolean
+<br>
+
+**D. boolean**
 
 It is useful for conditions, search results, and flags.
 ```
@@ -151,7 +160,9 @@ System.out.println(found);
 Output: 
 `true`
 
-E. char
+<br>
+
+**E. char**
 
 A char represents one UTF-16 code unit, not necessarily one complete Unicode character.
 For standard English letters and digits, you can generally treat it as one character.
@@ -185,8 +196,9 @@ b
 - 97 + 1 produces 98.
 - Casting the result to char produces 'b'.
 
+<br>
 
-3. **Reference Data Types: String and objects**
+### 3. Reference Data Types: String and objects
 
 Consider:
 
@@ -208,9 +220,7 @@ Consider:
 ```
 int a = 10;
 int b = a;
-
 b = 20;
-
 System.out.println(a);
 System.out.println(b);
 ```
@@ -221,14 +231,13 @@ Output:
 ```
 The value stored in a was copied into b. Updating b does not change a.
 
+<br> 
+
 Now consider an array:
 ```
 int[] a = {1, 2, 3};
-
 int[] b = a;
-
 b[0] = 99;
-
 System.out.println(a[0]);
 System.out.println(b[0]);
 ```
@@ -240,26 +249,22 @@ Output:
 **Why?**
 
 - Both variables refer to the same array object.
-
-- The assignment: `int[] b = a;` does not create a second array. It copies the reference. 
-
+- The assignment: `int[] b = a;` does not create a second array. It copies the reference.
+  
+<br>
 
 **NULL**
 
 A reference variable can hold null, which means it does not currently refer to an object.
 ```
 String name = null;
-
 System.out.println(name);
 ```
 Output:
-
 `null`
-
 But this causes a runtime error:
 ```
 String name = null;
-
 System.out.println(name.length());
 ```
 The program throws a **NullPointerException** because there is no string object on which to call length().
@@ -270,6 +275,9 @@ if (name != null) {
     System.out.println(name.length());
 }
 ```
+
+<br> 
+
 Important distinctions:
 ```
 int x = 0;
@@ -284,76 +292,65 @@ These mean different things:
 
 **Note**: Primitive types such as int and boolean cannot hold null.
 
-4. **Integer Division vs. Decimal Division**
+<br>
+
+### 4. Integer Division vs. Decimal Division
 
 `System.out.println(5 / 2);`
 
-Output:
-
-`2`
+Output:  `2`
 
 But:
 
 `System.out.println(5.0 / 2);`
 
-Output:
-
-`2.5`
+Output:  `2.5`
 
 **Why?**
 
 - In the first expression, both operands are integers. Java performs integer division, discarding the fractional part.
-
 - In the second expression, one operand is a double, so Java performs floating-point division.
-
 - Common mistake: calculating averages
 
-Incorrect if you need the fractional part:
+**If you need the fractional part, then**
+
+**Incorrect:**   
 ```
 int a = 5;
 int b = 2;
-
 double average = (a + b) / 2;
-
 System.out.println(average);
 ```
 Output:
-
 `3.0`
-
 **The division happens before the result is assigned to average.**
-```
-Correct:
 
+**Correct:**
+```
 int a = 5;
 int b = 2;
-
 double average = (a + b) / 2.0;
-
 System.out.println(average);
 ```
 Output:
-
 `3.5`
+**Or alternatively, use this: ** `double average = (double) (a + b) / 2;`
 
-Alternatively:
-
-`double average = (double) (a + b) / 2;`
+<br>
 
 **Remember: The type of the expression determines how the calculation happens, not the type of the variable receiving the result.**
 
-**Bonus: Integer Overflow**
+<br>
+
+### 5. Integer Overflow
 
 Consider:
 ```
 int x = 2147483647;
-
 System.out.println(x + 1);
 ```
 Output:
-
 `-2147483648`
 
 - The result wraps around because the mathematical result is outside the range of int.
-
 - Java does not automatically convert an overflowing int calculation to long.
