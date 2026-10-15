@@ -37,8 +37,10 @@ public class FizzBuzz {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         for (int i=1;i<=n;i++){
-            if(i%3==0 && i%5 == 0){
-                System.out.println("FizzBuzz");
+            if(i%3==0 && i%5 == 0){      
+              // this is checked first because if i write either of divisible of 3 or 5 first then it will fall under that condition and won't ever reach this one
+              // Check 15 first so common multiples don't get trapped by 3 or 5 early. Must check both conditions first to avoid shadowing.
+              System.out.println("FizzBuzz");
             }else if(i%3 == 0){
                 System.out.println("Fizz");
             }else if(i%5 == 0){
