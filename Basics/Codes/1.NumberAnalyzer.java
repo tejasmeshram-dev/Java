@@ -17,9 +17,9 @@ Important: Zero is neither positive nor negative, and it is even.
 Code Solution: 
 
     
-import java.util.Scanner;
+import java.util.Scanner; // necessary to use the scanner method for taking inputs
 public class NumberAnalyzer {
-    public static void Analyzer(int num){
+    public static void numberAnalyzer(int num){
         // positive, negative, zero
         if(num>0){
             System.out.println("Positive");
@@ -35,12 +35,14 @@ public class NumberAnalyzer {
             System.out.println("Odd");
         }
         //square
-        System.out.println(num*num);
+        long square = (long) num*num; // edge case that the square can be a large number
+        System.out.println(square);
     }
     public static void main(String[] args){
         System.out.print("Enter a number: ");
         Scanner sc = new Scanner(System.in);
         int number  = sc.nextInt();
-        Analyzer(number);
+        numberAnalyzer(number);
     }
 }
+
