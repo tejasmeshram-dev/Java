@@ -1,0 +1,129 @@
+PART 1 — UNDERSTAND JAVA COLLECTIONS
+1. What are Java collections?
+
+A collection is an object that stores and manages a group of elements.
+
+For example, suppose you have these numbers:
+
+10, 20, 30, 40, 50
+
+You could store them in an array:
+
+int[] nums = {10, 20, 30, 40, 50};
+
+But what if you don't know how many elements you will need to store?
+
+What if you need to insert and remove elements frequently?
+
+What if you need to check whether an element already exists?
+
+Different data structures solve these different problems.
+
+Java provides several implementations, including:
+
+Data structure	Java implementation	Primary use
+Dynamic array	ArrayList	Resizable list of elements
+Hash map	HashMap	Key-value storage and fast lookup
+Hash set	HashSet	Unique elements and membership checks
+Stack	ArrayDeque	Last-in, first-out processing
+Queue	ArrayDeque	First-in, first-out processing
+Double-ended queue	ArrayDeque	Operations at both ends
+Min-heap	PriorityQueue	Repeatedly retrieve the smallest element
+Max-heap	PriorityQueue with comparator	Repeatedly retrieve the largest element
+Linked list	Custom ListNode	Pointer manipulation problems
+The most important principle
+
+Choose a data structure based on the operations your problem requires.
+
+For example:
+
+Need indexed access? Consider an array or ArrayList.
+Need to check whether a value has appeared before? Consider HashSet.
+Need to count occurrences? Consider HashMap.
+Need the most recently added item? Consider a stack.
+Need to process items in arrival order? Consider a queue.
+Need the smallest item repeatedly? Consider a min-heap.
+Need to manipulate nodes and links? Consider a linked list.
+
+You will encounter these decisions throughout NeetCode and coding assessments.
+
+2. Imports you must know
+
+At the beginning of a Java file, you can import the collection classes you need.
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.ArrayDeque;
+import java.util.Deque;
+import java.util.Queue;
+import java.util.PriorityQueue;
+import java.util.Map;
+import java.util.Set;
+import java.util.List;
+import java.util.Comparator;
+import java.util.Arrays;
+
+Alternatively:
+
+import java.util.*;
+
+This imports the accessible types in java.util.
+
+It does not import every class in every Java package.
+
+Example
+import java.util.ArrayList;
+
+public class Main {
+    public static void main(String[] args) {
+
+        ArrayList<Integer> numbers = new ArrayList<>();
+
+        numbers.add(10);
+        numbers.add(20);
+
+        System.out.println(numbers);
+    }
+}
+
+Output:
+
+[10, 20]
+Important: primitive types versus wrapper classes
+
+You cannot write:
+
+ArrayList<int> numbers = new ArrayList<>(); // Invalid
+
+You must use the wrapper class:
+
+ArrayList<Integer> numbers = new ArrayList<>();
+
+Common primitive-to-wrapper mappings:
+
+Primitive	Wrapper
+int	Integer
+long	Long
+double	Double
+char	Character
+boolean	Boolean
+float	Float
+short	Short
+byte	Byte
+
+Java supports autoboxing and unboxing.
+
+Integer x = 10; // Autoboxing: int to Integer
+
+int y = x;      // Unboxing: Integer to int
+
+You generally don't need to convert manually.
+
+Exception to remember: An Integer can be null, and attempting to unbox it causes a NullPointerException.
+
+Integer x = null;
+
+// int y = x; // Throws NullPointerException
+
+This matters when retrieving values from maps.
