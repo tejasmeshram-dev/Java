@@ -1,0 +1,89 @@
+PART 12 — TESTING YOUR JAVA CODE PROPERLY
+
+Understanding a solution is not enough.
+
+You must also be able to verify that your implementation works for normal inputs, boundary cases, and unexpected inputs.
+
+45. The four categories of tests
+A. Normal cases
+
+These are ordinary valid inputs.
+
+Example:
+
+containsDuplicate([1, 2, 3, 1]) -> true
+B. Boundary cases
+
+These test the edges of the problem.
+
+Examples:
+
+[]
+[1]
+""
+null
+
+Whether null is valid depends on the problem's contract.
+
+C. Repeated values
+
+Examples:
+
+[5, 5, 5]
+[1, 2, 1, 2]
+
+These are particularly useful for HashMap and HashSet problems.
+
+D. Adversarial cases
+
+These test assumptions that might be incorrect.
+
+Examples:
+
+nums = [3, 3], target = 6
+
+This checks whether Two Sum incorrectly uses the same element twice.
+
+Another example:
+
+s = "([)]"
+
+This checks whether a bracket algorithm verifies correct nesting rather than merely counting opening and closing brackets.
+
+46. Write a simple Java test harness
+
+For a method-based solution, you can create a separate Main class that calls the methods.
+
+For example:
+
+import java.util.Arrays;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Solution solution = new Solution();
+
+        int[] nums = {2, 7, 11, 15};
+
+        int[] result = solution.twoSum(nums, 9);
+
+        System.out.println(Arrays.toString(result));
+    }
+}
+
+Output:
+
+[0, 1]
+
+This is useful when practising locally.
+
+Important LeetCode distinction
+
+On LeetCode, you generally submit the required Solution class and method.
+
+You usually do not need to write main().
+
+In a standalone Java assessment, however, you may need to read input through Scanner or another input method and print the result.
+
+You should become comfortable with both formats.
